@@ -31,9 +31,9 @@
 
 - (NSString *)description
 {
-    // TODO: Implement a standard autoreleasing method.
     NSString *description = [[NSString alloc] initWithFormat:@"Car: %@", self.make];
-    return description;
+    // autorelease will clean up the memory in the near future (when convenient
+    return [description autorelease];
 }
 
 @end
