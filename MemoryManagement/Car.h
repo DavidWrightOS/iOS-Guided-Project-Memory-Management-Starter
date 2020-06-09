@@ -10,7 +10,7 @@
 
 @interface Car : NSObject
 
-@property (nonatomic, copy) NSString *make;
+@property (nonatomic, copy) NSString *make; // copy gives ownership, just like retain does
 
 - (instancetype)initWithMake:(NSString *)make;
 
