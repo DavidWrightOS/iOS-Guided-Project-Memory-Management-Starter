@@ -58,6 +58,9 @@
     Car *honda = [[Car alloc] initWithMake:make];
     [make release];
     
+    Car *toyota = [Car car]; // uses a convenience initializer so it is autoreleased (no need to release memory when done using honda2)
+    NSLog(@"%@", toyota);
+    
     me.car = honda;
     [honda release];
     

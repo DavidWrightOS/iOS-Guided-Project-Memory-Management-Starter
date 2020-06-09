@@ -21,6 +21,17 @@
     return self;
 }
 
++ (instancetype)car
+{
+    return [self carWithMake:@"Toyota"];
+}
+
++ (instancetype)carWithMake:(NSString *)make
+{
+    Car *car = [[self alloc] initWithMake:make];
+    return [car autorelease];
+}
+
 - (void)dealloc
 {
     NSLog(@"-[Car dealloc]: %@", self);

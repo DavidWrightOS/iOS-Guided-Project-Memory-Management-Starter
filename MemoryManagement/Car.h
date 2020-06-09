@@ -14,7 +14,8 @@
 
 - (instancetype)initWithMake:(NSString *)make;
 
-// TODO: Create an autoreleased class method to create a Car
++ (instancetype)car;
++ (instancetype)carWithMake:(NSString *)make;
 
 
 @end
