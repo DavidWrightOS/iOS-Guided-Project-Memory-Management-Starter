@@ -16,4 +16,5 @@ void LSILog(NSString *format, ...) {
     va_end(args);
     [[NSFileHandle fileHandleWithStandardOutput]
      writeData: [formattedString dataUsingEncoding: NSUTF8StringEncoding]];
+    [formattedString release];
 }
