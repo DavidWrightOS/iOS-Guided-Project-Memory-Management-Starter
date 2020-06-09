@@ -30,11 +30,22 @@
     [super dealloc];
 }
 
-// TODO: Implement setCar with MRC
 - (void)setCar:(Car *)car
 {
+    // No good!
+    //    [_car release];
+    //    _car = [car retain];
+    
+    // Great!
+    [car retain];
     [_car release];
-    _car = [car retain];
+    _car = car;
+    
+    // Another great alternative!
+//    if (_car != car) {
+//        [_car release];
+//        _car = [car retain];
+//    }
 }
 
 @end

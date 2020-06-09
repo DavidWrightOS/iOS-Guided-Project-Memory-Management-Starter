@@ -21,9 +21,6 @@
     return self;
 }
 
-// TODO: Implement autoreleased class car method
-
-
 - (void)dealloc
 {
     NSLog(@"-[Car dealloc]: %@", self);

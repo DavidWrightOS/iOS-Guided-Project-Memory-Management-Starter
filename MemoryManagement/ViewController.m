@@ -61,6 +61,7 @@
     me.car = honda;
     [honda release];
     
+    me.car = me.car;
 //    NSLog(@"The make for my car is: %@", me.car.make);
 //
 //    [make replaceOccurrencesOfString:@"Si" withString:@"Sport" options:0 range:NSMakeRange(0, make.length)];
