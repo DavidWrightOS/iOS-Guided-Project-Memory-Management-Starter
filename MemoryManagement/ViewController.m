@@ -73,3 +73,41 @@
 
 
 @end
+
+/*
+ 
+ // Is the object autoreleased? Why?
+ 
+ NSString *name = [NSString stringWithFormat:@"%@ %@", @"John", @"Miller"];
+ Autoreleased
+ 
+ NSDate *today = [NSDate date];
+ Autoreleased
+ 
+ NSDate *now = [NSDate new];
+ Not Autoreleased
+ 
+ NSDate *tomorrow2 = [NSDate dateWithTimeIntervalSinceNow:60*60*24];
+ Autoreleased
+ 
+ NSDate *nextTomorrow = [tomorrow2 copy]; // retain: 1
+ Not Autoreleased
+ 
+ NSArray *words = [@"This sentence is the bomb" componentsSeparatedByString:@" "];
+ Autoreleased
+ 
+ NSString *idea = [[NSString alloc] initWithString:@"Hello Ideas"];
+ Not Autoreleased
+ 
+ Car *redCar = [Car car];
+ Autoreleased
+ 
+ NSString *idea2 = [[[NSString alloc] initWithString:@"Hello Ideas"] autorelease];
+ Autoreleased
+ 
+ NSString *idea3 = [[NSString alloc] initWithString:@"Hello Ideas"];
+ Not Autoreleased
+ [idea3 autorelease];
+ Autoreleased
+ 
+ */
