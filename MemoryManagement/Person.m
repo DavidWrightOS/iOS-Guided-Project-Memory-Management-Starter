@@ -32,16 +32,16 @@
 
 - (void)setCar:(Car *)car
 {
-    // No good!
-    //    [_car release];
-    //    _car = [car retain];
+    // MARK: No good!
+//    [_car release];
+//    _car = [car retain];
     
-    // Great!
+    // MARK: Great!
     [car retain];
     [_car release];
     _car = car;
     
-    // Another great alternative!
+    // MARK: Another great alternative!
 //    if (_car != car) {
 //        [_car release];
 //        _car = [car retain];
