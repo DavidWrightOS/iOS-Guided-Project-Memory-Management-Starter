@@ -71,9 +71,34 @@
     
     NSLog(@"The make for my car is: %@", me.car.make);
 
+    
+    
+//    __block ViewController *weakSelf = self;
+    __block __weak ViewController *weakSelf = self;
+    [NSTimer scheduledTimerWithTimeInterval:5 repeats:YES
+                  block:^(NSTimer * _Nonnull timer) { // [weak self] in
+        [weakSelf doSomething];
+        NSLog(@"Person is: %@", me);
+    }];
+    
+    
+    
+    NSDictionary *myDict = @{@"Key": @"Value"};
+    
+    CFDictionaryRef dictionaryRef = CFBridgingRetain(myDict);
+    
+    myDict = CFBridgingRelease(dictionaryRef);
+    CFRelease(dictionaryRef);
+    
+    
+    
     [me release];
 }
 
+- (void)doSomething
+{
+    NSLog(@"Did something!");
+}
 
 @end
 
