@@ -17,7 +17,7 @@
     self = [super init];
     if (self) {
         NSLog(@"-[Person init]: %@", _car);
-        _car = [car retain];
+        _car = [car retain]; // need to retain car because in the header file we declared the property as retain
     }
     return self;
 }
@@ -25,7 +25,7 @@
 - (void)dealloc
 {
     NSLog(@"-[Person dealloc]: %@", _car);
-    [_car release];
+    [_car release]; // release the car property
     
     [super dealloc];
 }
@@ -33,18 +33,18 @@
 - (void)setCar:(Car *)car
 {
     // MARK: No good!
-//    [_car release];
-//    _car = [car retain];
+    [_car release]; // release old car
+    _car = [car retain]; // retain new car (does not work if oldCar = newCar, we already released oldCar to 0)
     
     // MARK: Great!
-    [car retain];
-    [_car release];
-    _car = car;
+//    [car retain]; // retain new car
+//    [_car release]; // release old car
+//    _car = car;
     
     // MARK: Another great alternative!
 //    if (_car != car) {
-//        [_car release];
-//        _car = [car retain];
+//        [_car release]; // release old car
+//        _car = [car retain]; // retain new car
 //    }
 }
 

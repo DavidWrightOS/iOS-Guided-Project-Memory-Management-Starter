@@ -12,7 +12,7 @@
 
 @interface Person : NSObject
 
-// TODO: Establish ownership for the car
+// Establish ownership for the car with retain
 @property (nonatomic, retain) Car *car; // MRC: assign (the default in MRC - aka weak), or retain (aka strong, the default in ARC)
 
 - (instancetype)initWithCar:(Car *)car;
