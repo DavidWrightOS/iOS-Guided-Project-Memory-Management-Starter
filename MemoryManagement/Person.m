@@ -33,13 +33,13 @@
 - (void)setCar:(Car *)car
 {
     // MARK: No good!
-    [_car release]; // release old car
-    _car = [car retain]; // retain new car (does not work if oldCar = newCar, we already released oldCar to 0)
+//    [_car release]; // release old car
+//    _car = [car retain]; // retain new car (does not work if oldCar = newCar, we already released oldCar to 0)
     
     // MARK: Great!
-//    [car retain]; // retain new car
-//    [_car release]; // release old car
-//    _car = car;
+    [car retain]; // retain new car
+    [_car release]; // release old car
+    _car = car;
     
     // MARK: Another great alternative!
 //    if (_car != car) {
